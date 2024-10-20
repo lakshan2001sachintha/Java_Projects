@@ -1,1 +1,71 @@
+class Member {
+    String Name;
+    int Age;
+    String Phone_number;
+    String Address;
+    double Salary;
 
+    Member(String Name,int Age,String Phone_number,String Address,double Salary){
+        this.Name = Name;
+        this.Age = Age;
+        this.Phone_number = Phone_number;
+        this.Address = Address;
+        this.Salary = Salary;
+    }
+    void PrintSalary(){
+        System.out.println("Salary: $"+Salary);
+    }
+}
+
+================================================================================================================
+
+public class Manager extends Member{
+    String department;
+    Manager(String Name,int Age,String Phone_number,String Address,double Salary,String department){
+        super(Name,Age,Phone_number,Address,Salary);
+        this.department = department;
+    }
+}
+
+================================================================================================================
+
+public class Employee extends Member{
+    String specialization;
+
+    Employee(String Name,int Age,String Phone_number,String Address,double Salary,String specialization){
+        super(Name,Age,Phone_number,Address,Salary);
+        this.specialization = specialization;
+    }
+}
+
+================================================================================================================
+
+import javax.naming.Name;
+
+public class MemberExample {
+    public static void main(String[] args) {
+        Employee E1 = new Employee("lakshan",23,"0459876543","laggala",50000.987,"Software Development");
+        Manager M1 = new Manager("Kenady",34,"8987666987","australia",87687.87,"HR");
+
+        System.out.println("===== Employee Details =====");
+        System.out.println("Name : "+ E1.Name);
+        System.out.println("Age  : "+ E1.Age);
+        System.out.println("Ph_No: "+ E1.Phone_number);
+        System.out.println("Add_s: "+ E1.Address);
+        E1.PrintSalary();
+        System.out.println("Spe_n: "+ E1.specialization);
+
+        System.out.println();
+
+        System.out.println("===== Manager Details =====");
+        System.out.println("Name : "+ M1.Name);
+        System.out.println("Age  : "+ M1.Age);
+        System.out.println("Ph_No: "+ M1.Phone_number);
+        System.out.println("Add_s: "+ M1.Address);
+        M1.PrintSalary();
+        System.out.println("Spe_n: "+ M1.department);
+
+    }
+}
+
+================================================================================================================
